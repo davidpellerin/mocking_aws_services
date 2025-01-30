@@ -23,8 +23,12 @@ describe("createAccount", () => {
     };
     orgMockClient.on(CreateAccountCommand).resolves(mockResponse);
     const { createAccount } = await import("./organizations.js");
-    const results = await createAccount("test@test.com", "test", "test", orgMockClient);
-    console.log(results);
+    const results = await createAccount(
+      "test@test.com",
+      "My Account Name",
+      "OrganizationAccountAccessRole",
+      orgMockClient
+    );
     expect(results).toBe(mockResponse);
   });
 });

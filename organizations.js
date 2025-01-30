@@ -6,7 +6,6 @@ import {
 async function createAccount(email, accountName, roleName, client = null) {
   try {
     if (client === null) {
-      console.log("Client was null so creating a new Organizations client");
       client = new OrganizationsClient({ region: "us-east-1" });
     }
     const command = new CreateAccountCommand({
@@ -23,5 +22,3 @@ async function createAccount(email, accountName, roleName, client = null) {
 }
 
 export { createAccount };
-
-createAccount("test@test.com", "test", "test");
