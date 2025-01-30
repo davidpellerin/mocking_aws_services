@@ -18,6 +18,7 @@ async function createAccount(email, accountName, roleName, client = null) {
     return response;
   } catch (error) {
     console.error("Error in createAccount", error);
+    throw error;
   }
 }
 
