@@ -2,7 +2,7 @@
 
 This repository demonstrates how to use `aws-sdk-client-mock` and `aws-sdk-client-mock-jest` to mock calls to AWS Services.
 
-The `createAccount` method in `organizations.js` has a `client` parameter which takes in your mock client. So we use it like this:
+The `createAccount` method in `organizations.js` has an optional `client` parameter which takes in your mock client. If you leave it blank it will use the _real_ client. So we use it like this:
 
 ```
 const { createAccount } = await import("./organizations.js");
