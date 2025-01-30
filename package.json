@@ -10,15 +10,19 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@aws-sdk/client-organizations": "^3.738.0",
-    "aws-sdk-client-mock": "^4.1.0",
-    "jest": "^29.7.0"
+    "@aws-sdk/client-organizations": "^3.738.0"
   },
   "jest": {
     "testEnvironment": "node",
     "transform": {},
     "moduleNameMapper": {
-      "^(\\.{1,2}/.*)\\.js$": "$1"
+      "^(\\.{1,2}/.*)\\.js$": "$1",
+      "^aws-sdk-client-mock-jest$": "<rootDir>/node_modules/aws-sdk-client-mock-jest/dist/cjs/jest.js"
     }
+  },
+  "devDependencies": {
+    "aws-sdk-client-mock": "^4.1.0",
+    "aws-sdk-client-mock-jest": "^4.1.0",
+    "jest": "^29.7.0"
   }
 }

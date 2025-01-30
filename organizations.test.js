@@ -1,5 +1,6 @@
 import { describe, expect } from "@jest/globals";
 import { mockClient } from "aws-sdk-client-mock";
+import "aws-sdk-client-mock-jest";
 import {
   OrganizationsClient,
   CreateAccountCommand,
@@ -29,6 +30,7 @@ describe("createAccount", () => {
       "OrganizationAccountAccessRole",
       orgMockClient
     );
+    expect(orgMockClient).toHaveReceivedCommand(CreateAccountCommand);
     expect(results).toBe(mockResponse);
   });
 });
