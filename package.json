@@ -1,7 +1,7 @@
 {
-  "name": "mocking_aws_sts",
+  "name": "mocking_aws_services",
   "version": "1.0.0",
-  "main": "client.js",
+  "main": "organizations.js",
   "type": "module",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
