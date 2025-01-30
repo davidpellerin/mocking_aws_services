@@ -25,7 +25,7 @@ describe("createAccount", () => {
     orgMockClient.on(CreateAccountCommand).resolves(mockResponse);
     const { createAccount } = await import("./organizations.js");
     const results = await createAccount(
-      "test@test.com",
+      "test@example.com",
       "My Account Name",
       "OrganizationAccountAccessRole",
       orgMockClient
