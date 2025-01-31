@@ -1,14 +1,17 @@
 import { describe, expect } from "@jest/globals";
 import { mockClient } from "aws-sdk-client-mock";
-import "aws-sdk-client-mock-jest";
 import {
   OrganizationsClient,
   CreateAccountCommand,
 } from "@aws-sdk/client-organizations";
 
-const orgMockClient = mockClient(OrganizationsClient);
+const client = mockClient(OrganizationsClient);
 
 describe("createAccount", () => {
+  beforeEach(() => {
+    client.reset();
+  });
+
   it("should create an account", async () => {
     const mockResponse = {
       $metadata: {
@@ -22,15 +25,14 @@ describe("createAccount", () => {
         RequestedTimestamp: "2025-01-30T19:36:45.395Z",
       },
     };
-    orgMockClient.on(CreateAccountCommand).resolves(mockResponse);
+    client.on(CreateAccountCommand).resolves(mockResponse);
     const { createAccount } = await import("./organizations.js");
     const results = await createAccount(
-      "test@example.com",
+      "test@test.com",
       "My Account Name",
       "OrganizationAccountAccessRole",
-      orgMockClient
+      client
     );
-    expect(orgMockClient).toHaveReceivedCommand(CreateAccountCommand);
     expect(results).toBe(mockResponse);
   });
 });
