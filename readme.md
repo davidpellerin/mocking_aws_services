@@ -2,7 +2,7 @@
 
 [![codecov](https://codecov.io/github/davidpellerin/mocking_aws_services/graph/badge.svg?token=LLE6U44YPO)](https://codecov.io/github/davidpellerin/mocking_aws_services)
 
-This repository demonstrates how to use `aws-sdk-client-mock` and `aws-sdk-client-mock-jest` to mock calls to AWS Services.
+This repository demonstrates how to use `aws-sdk-client-mock` to mock calls to AWS Services.
 
 The `createAccount` method in `organizations.js` has an optional `client` parameter which takes in your mock client. If you leave it blank it will use the _real_ client. So for unit testing purposes we would call it like this:
 
