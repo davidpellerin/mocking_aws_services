@@ -4,7 +4,7 @@
   "main": "organizations.js",
   "type": "module",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js  --detectOpenHandles --runInBand"
   },
   "author": "",
   "license": "ISC",
@@ -16,13 +16,11 @@
     "testEnvironment": "node",
     "transform": {},
     "moduleNameMapper": {
-      "^(\\.{1,2}/.*)\\.js$": "$1",
-      "^aws-sdk-client-mock-jest$": "<rootDir>/node_modules/aws-sdk-client-mock-jest/dist/cjs/jest.js"
+      "^(\\.{1,2}/.*)\\.js$": "$1"
     }
   },
   "devDependencies": {
     "aws-sdk-client-mock": "^4.1.0",
-    "aws-sdk-client-mock-jest": "^4.1.0",
     "jest": "^29.7.0"
   }
 }
