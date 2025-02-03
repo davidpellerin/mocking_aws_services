@@ -18,7 +18,11 @@
     "transform": {},
     "moduleNameMapper": {
       "^(\\.{1,2}/.*)\\.js$": "$1"
-    }
+    },
+    "coverageReporters": [
+      "text",
+      "html"
+    ]
   },
   "devDependencies": {
     "aws-sdk-client-mock": "^4.1.0",
