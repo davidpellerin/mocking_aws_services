@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js  --detectOpenHandles --runInBand",
-    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js  --detectOpenHandles --runInBand --coverage"
+    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js  --detectOpenHandles --runInBand --coverage",
+    "test:junit": "node --experimental-vm-modules node_modules/jest/bin/jest.js  --detectOpenHandles --runInBand --coverage --reporters=default --reporters=jest-junit"
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +28,16 @@
   },
   "devDependencies": {
     "aws-sdk-client-mock": "^4.1.0",
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+    "jest-junit": "^16.0.0"
+  },
+  "jest-junit": {
+    "outputDirectory": "coverage",
+    "outputName": "junit.xml",
+    "ancestorSeparator": " › ",
+    "uniqueOutputName": "false",
+    "suiteNameTemplate": "{filepath}",
+    "classNameTemplate": "{classname}",
+    "titleTemplate": "{title}"
   }
 }
