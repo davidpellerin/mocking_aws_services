@@ -21,7 +21,8 @@
     },
     "coverageReporters": [
       "text",
-      "html"
+      "html",
+      "json-summary"
     ]
   },
   "devDependencies": {
