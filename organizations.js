@@ -17,7 +17,6 @@ async function createAccount(email, accountName, roleName, client = null) {
     const response = await client.send(command);
     return response;
   } catch (error) {
-    console.error("Error in createAccount", error);
     throw error;
   }
 }
